@@ -11,13 +11,13 @@ const translations = {
     },
     hero: {
       title: 'Miguel Ángel Quiroga',
-      subtitle: 'Senior Full Stack Developer',
-      description: 'Especialista en Python, PHP, .NET, JavaScript y Swift',
-      location: 'Cartagena, España'
+      subtitle: 'Tech Lead & Full-Stack Developer',
+      description: 'Stack principal: PHP · .NET · Java · C · JavaScript (React, Node.js) · Python',
+      infrastructure: 'Infraestructura y datos: SQL · MongoDB · Pinecone · AWS (EC2, S3) · Docker'
     },
     about: {
       title: 'Sobre mí',
-      description: 'Con más de 10 años de experiencia en desarrollo de software, he trabajado con empresas líderes creando soluciones innovadoras y escalables.',
+      description: 'Con más de 20 años de experiencia en desarrollo de software, he trabajado con todo tipo de empresas, desde grandes corporaciones como Accenture, Repsol, Galp, Red Eléctrica, Iberdrola o El Corte Inglés, hasta startups tecnológicas.\n\nA lo largo de mi carrera he desarrollado soluciones en sectores muy distintos —financiero, logístico, educativo, sanitario y de consumo— así como juegos y productos digitales.\n\nMi enfoque combina visión técnica y de negocio: entender el problema, diseñar la arquitectura adecuada y entregar resultados medibles.\n\nAdemás, soy un impulsor de la tecnología blockchain, con años de experiencia en el ecosistema crypto, NFT y Web3, explorando su aplicación real en trazabilidad, identidad digital y propiedad descentralizada.',
       experience: 'Años de experiencia',
       clients: 'Clientes destacados',
       technologies: 'Tecnologías dominadas'
@@ -46,13 +46,13 @@ const translations = {
     },
     hero: {
       title: 'Miguel Ángel Quiroga',
-      subtitle: 'Senior Full Stack Developer',
-      description: 'Specialist in Python, PHP, .NET, JavaScript and Swift',
-      location: 'Cartagena, Spain'
+      subtitle: 'Tech Lead & Full-Stack Developer',
+      description: 'Main stack: PHP · .NET · Java · C · JavaScript (React, Node.js) · Python',
+      infrastructure: 'Infrastructure & data: SQL · MongoDB · Pinecone · AWS (EC2, S3) · Docker'
     },
     about: {
       title: 'About me',
-      description: 'With over 10 years of experience in software development, I have worked with leading companies creating innovative and scalable solutions.',
+      description: 'With over 20 years of experience in software development, I have worked with all types of companies, from large corporations like Accenture, Repsol, Galp, Red Eléctrica, Iberdrola, and El Corte Inglés, to tech startups.\n\nThroughout my career I have developed solutions in very different sectors —financial, logistics, education, healthcare and consumer— as well as games and digital products.\n\nMy approach combines technical and business vision: understand the problem, design the right architecture, and deliver measurable results.\n\nAdditionally, I am a blockchain technology advocate, with years of experience in the crypto, NFT and Web3 ecosystem, exploring its real application in traceability, digital identity and decentralized ownership.',
       experience: 'Years of experience',
       clients: 'Notable clients',
       technologies: 'Technologies mastered'
@@ -99,43 +99,34 @@ const projects = [
     id: 2,
     number: '02',
     title: {
-      es: 'VetoClock Iberia',
-      en: 'VetoClock Iberia'
+      es: 'Software Presentaciones Kinect',
+      en: 'Kinect Presentation Software'
     },
     description: {
-      es: 'Sistema de gestión de casos veterinarios con alertas en tiempo real y análisis de tiempos',
-      en: 'Veterinary case management system with real-time alerts and time analysis'
+      es: 'Sistema interactivo con Kinect para presentaciones corporativas de Jones Lang LaSalle',
+      en: 'Interactive Kinect system for corporate presentations at Jones Lang LaSalle'
     },
-    tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Real-time'],
-    links: [
-      {
-        url: 'https://vetoclock-formacion.com/',
-        text: { es: 'Formación →', en: 'Training →' }
-      },
-      {
-        url: 'https://vetoclock-dashboard.netlify.app/sign-in',
-        text: { es: 'Dashboard →', en: 'Dashboard →' }
-      }
-    ],
-    image: '/projects/vetoclock-avisos.png'
+    tags: ['Kinect', 'C#', '.NET', 'Interactive UI'],
+    links: [],
+    image: '/projects/kinect-presentation.png'
   },
   {
     id: 3,
     number: '03',
     title: {
-      es: 'Crown Sport Nutrition',
-      en: 'Crown Sport Nutrition'
+      es: 'VetoClock Formación IA',
+      en: 'VetoClock AI Training'
     },
     description: {
-      es: 'E-commerce de nutrición deportiva con programa de fidelización y gestión de productos',
-      en: 'Sports nutrition e-commerce with loyalty program and product management'
+      es: 'Plataforma de IA veterinaria con chat inteligente y búsqueda avanzada de casos',
+      en: 'Veterinary AI platform with intelligent chat and advanced case search'
     },
-    tags: ['PHP', 'JavaScript', 'MySQL', 'E-commerce'],
+    tags: ['AI', 'Python', 'Machine Learning', 'Chat Interface'],
     links: [{
-      url: 'https://crownsportnutrition.com/',
-      text: { es: 'Ver proyecto →', en: 'View project →' }
+      url: 'https://vetoclock-formacion.com/',
+      text: { es: 'Ver plataforma →', en: 'View platform →' }
     }],
-    image: '/projects/crown-homepage.png'
+    image: '/projects/vetoclock-formacion.png'
   },
   {
     id: 4,
@@ -171,16 +162,25 @@ const projects = [
     id: 6,
     number: '06',
     title: {
-      es: 'Software Presentaciones Kinect',
-      en: 'Kinect Presentation Software'
+      es: 'VetoClock Iberia',
+      en: 'VetoClock Iberia'
     },
     description: {
-      es: 'Sistema interactivo con Kinect para presentaciones corporativas de Jones Lang LaSalle',
-      en: 'Interactive Kinect system for corporate presentations at Jones Lang LaSalle'
+      es: 'Sistema de gestión de casos veterinarios con alertas en tiempo real y análisis de tiempos',
+      en: 'Veterinary case management system with real-time alerts and time analysis'
     },
-    tags: ['Kinect', 'C#', '.NET', 'Interactive UI'],
-    links: [],
-    image: '/projects/kinect-presentation.png'
+    tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Real-time'],
+    links: [
+      {
+        url: 'https://vetoclock-formacion.com/',
+        text: { es: 'Formación →', en: 'Training →' }
+      },
+      {
+        url: 'https://vetoclock-dashboard.netlify.app/sign-in',
+        text: { es: 'Dashboard →', en: 'Dashboard →' }
+      }
+    ],
+    image: '/projects/vetoclock-avisos.png'
   },
   {
     id: 7,
@@ -216,19 +216,19 @@ const projects = [
     id: 9,
     number: '09',
     title: {
-      es: 'VetoClock Formación IA',
-      en: 'VetoClock AI Training'
+      es: 'Crown Sport Nutrition',
+      en: 'Crown Sport Nutrition'
     },
     description: {
-      es: 'Plataforma de IA veterinaria con chat inteligente y búsqueda avanzada de casos',
-      en: 'Veterinary AI platform with intelligent chat and advanced case search'
+      es: 'E-commerce de nutrición deportiva con programa de fidelización y gestión de productos',
+      en: 'Sports nutrition e-commerce with loyalty program and product management'
     },
-    tags: ['AI', 'Python', 'Machine Learning', 'Chat Interface'],
+    tags: ['PHP', 'JavaScript', 'MySQL', 'E-commerce'],
     links: [{
-      url: 'https://vetoclock-formacion.com/',
-      text: { es: 'Ver plataforma →', en: 'View platform →' }
+      url: 'https://crownsportnutrition.com/',
+      text: { es: 'Ver proyecto →', en: 'View project →' }
     }],
-    image: '/projects/vetoclock-formacion.png'
+    image: '/projects/crown-homepage.png'
   }
 ];
 
@@ -326,7 +326,7 @@ export default function Home() {
             <h1 className="fade-in-up">{t.hero.title}</h1>
             <h2 className="fade-in-up delay-100">{t.hero.subtitle}</h2>
             <p className="hero-description fade-in-up delay-200">{t.hero.description}</p>
-            <p className="hero-location fade-in-up delay-300">{t.hero.location}</p>
+            <p className="hero-location fade-in-up delay-300">{t.hero.infrastructure}</p>
           </div>
         </div>
       </section>
@@ -335,19 +335,23 @@ export default function Home() {
       <section id="about" className="section section-gray">
         <div className="container">
           <h2 className="section-title animate-on-scroll">{t.about.title}</h2>
-          <p className="section-subtitle animate-on-scroll">{t.about.description}</p>
+          <div className="section-subtitle animate-on-scroll">
+            {t.about.description.split('\n\n').map((paragraph, index) => (
+              <p key={index} style={{ marginBottom: '1.5rem' }}>{paragraph}</p>
+            ))}
+          </div>
           
           <div className="stats">
             <div className="stat animate-on-scroll">
-              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
+              <div className="stat-number counter" data-target="20" data-suffix="+">20+</div>
               <div className="stat-label">{t.about.experience}</div>
             </div>
             <div className="stat animate-on-scroll delay-100">
-              <div className="stat-number counter" data-target="7">7</div>
+              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
               <div className="stat-label">{t.about.clients}</div>
             </div>
             <div className="stat animate-on-scroll delay-200">
-              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
+              <div className="stat-number counter" data-target="15" data-suffix="+">15+</div>
               <div className="stat-label">{t.about.technologies}</div>
             </div>
           </div>
@@ -363,13 +367,12 @@ export default function Home() {
             </div>
             <div className="grid-item animate-on-scroll delay-100">
               <h3>Clientes</h3>
-              <p>El Corte Inglés</p>
-              <p>Seur</p>
-              <p>Prosegur</p>
-              <p>Metrovacesa</p>
-              <p>Crown Sport Nutrition</p>
-              <p>VetoClock</p>
-              <p>Gomel</p>
+              <p>Accenture · Repsol · Galp</p>
+              <p>Red Eléctrica · Iberdrola</p>
+              <p>El Corte Inglés · Seur · Prosegur</p>
+              <p>Metrovacesa · Jones Lang LaSalle</p>
+              <p>Crown Sport Nutrition · VetoClock</p>
+              <p>Gomel · Bunji Restaurant</p>
             </div>
           </div>
         </div>
@@ -445,9 +448,9 @@ export default function Home() {
               <h3>{t.contact.linkedin}</h3>
               <a 
                 href="https://www.linkedin.com/in/miguel-angel-quiroga-55133314/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            target="_blank"
+            rel="noopener noreferrer"
+          >
                 Miguel Ángel Quiroga
               </a>
             </div>
@@ -456,9 +459,9 @@ export default function Home() {
               <h3>{t.contact.github}</h3>
               <a 
                 href="https://github.com/kitcar63-prog"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            target="_blank"
+            rel="noopener noreferrer"
+          >
                 kitcar63-prog
               </a>
             </div>
