@@ -186,61 +186,49 @@ const projects = [
     id: 7,
     number: '07',
     title: {
-      es: 'Gomel Gaming Platform',
-      en: 'Gomel Gaming Platform'
+      es: 'Blockchain Educación',
+      en: 'Blockchain Education'
     },
     description: {
-      es: 'Plataforma de gaming con sistema de matchmaking y torneos',
-      en: 'Gaming platform with matchmaking system and tournaments'
+      es: 'Informe educativo sobre tecnología blockchain con diagramas de transacciones y Merkle Tree',
+      en: 'Educational report on blockchain technology with transaction diagrams and Merkle Tree'
     },
-    tags: ['Python', 'FastAPI', 'PostgreSQL', 'WebSocket'],
+    tags: ['Blockchain', 'Bitcoin', 'Cryptography', 'Education'],
     links: [],
-    image: null
+    image: '/projects/blockchain-educacion.png'
   },
   {
     id: 8,
     number: '08',
     title: {
-      es: 'Financial Dashboard',
-      en: 'Financial Dashboard'
+      es: 'Bunji Restaurant',
+      en: 'Bunji Restaurant'
     },
     description: {
-      es: 'Dashboard de análisis financiero con visualización de datos en tiempo real',
-      en: 'Financial analysis dashboard with real-time data visualization'
+      es: 'Web de restaurante tropical con diseño vibrante y sistema de reservas',
+      en: 'Tropical restaurant website with vibrant design and booking system'
     },
-    tags: ['React', 'TypeScript', 'D3.js', 'Finance'],
+    tags: ['React', 'JavaScript', 'Booking System', 'Web Design'],
     links: [],
-    image: null
+    image: '/projects/bunji-restaurant.png'
   },
   {
     id: 9,
     number: '09',
     title: {
-      es: 'Health Management System',
-      en: 'Health Management System'
+      es: 'VetoClock Formación IA',
+      en: 'VetoClock AI Training'
     },
     description: {
-      es: 'Sistema de gestión de salud con historiales médicos y citas',
-      en: 'Health management system with medical records and appointments'
+      es: 'Plataforma de IA veterinaria con chat inteligente y búsqueda avanzada de casos',
+      en: 'Veterinary AI platform with intelligent chat and advanced case search'
     },
-    tags: ['Swift', 'iOS', 'Firebase', 'Healthcare'],
-    links: [],
-    image: null
-  },
-  {
-    id: 10,
-    number: '10',
-    title: {
-      es: 'AI Content Generator',
-      en: 'AI Content Generator'
-    },
-    description: {
-      es: 'Generador de contenido con IA y procesamiento de lenguaje natural',
-      en: 'AI-powered content generator with natural language processing'
-    },
-    tags: ['Python', 'OpenAI', 'Pinecone', 'AI/ML'],
-    links: [],
-    image: null
+    tags: ['AI', 'Python', 'Machine Learning', 'Chat Interface'],
+    links: [{
+      url: 'https://vetoclock-formacion.com/',
+      text: { es: 'Ver plataforma →', en: 'View platform →' }
+    }],
+    image: '/projects/vetoclock-formacion.png'
   }
 ];
 
