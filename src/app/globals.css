@@ -702,6 +702,14 @@ body {
   width: 100%;
 }
 
+/* Contact Form Styles */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .nav {
@@ -754,6 +762,15 @@ body {
   
   .stats {
     gap: 40px;
+  }
+  
+  .tech-section {
+    padding: 40px 24px;
+  }
+  
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
   }
   
   .footer-content {

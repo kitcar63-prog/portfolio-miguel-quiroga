@@ -444,39 +444,204 @@ export default function Home() {
           <h2 className="section-title animate-on-scroll">{t.contact.title}</h2>
           <p className="section-subtitle animate-on-scroll">{t.contact.subtitle}</p>
           
-          <div className="contact-grid">
-            <div className="contact-item animate-on-scroll">
-              <h3>{t.contact.email}</h3>
-              <a href="mailto:maqdevelopment.com@gmail.com">
-                maqdevelopment.com@gmail.com
-              </a>
+          <div className="contact-form-grid">
+            {/* Contact Form */}
+            <div className="animate-on-scroll">
+              <form 
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                style={{ 
+                  background: 'white',
+                  padding: '48px',
+                  borderRadius: '20px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+                
+                <div style={{ marginBottom: '24px' }}>
+                  <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
+                    {language === 'es' ? 'Nombre' : 'Name'}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      border: '2px solid #f0f0f0',
+                      borderRadius: '12px',
+                      fontSize: '16px',
+                      transition: 'all 0.3s ease',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#667eea'}
+                    onBlur={(e) => e.target.style.borderColor = '#f0f0f0'}
+                  />
+                </div>
+
+                <div style={{ marginBottom: '24px' }}>
+                  <label htmlFor="email" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      border: '2px solid #f0f0f0',
+                      borderRadius: '12px',
+                      fontSize: '16px',
+                      transition: 'all 0.3s ease',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#667eea'}
+                    onBlur={(e) => e.target.style.borderColor = '#f0f0f0'}
+                  />
+                </div>
+
+                <div style={{ marginBottom: '24px' }}>
+                  <label htmlFor="message" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
+                    {language === 'es' ? 'Mensaje' : 'Message'}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      border: '2px solid #f0f0f0',
+                      borderRadius: '12px',
+                      fontSize: '16px',
+                      transition: 'all 0.3s ease',
+                      outline: 'none',
+                      resize: 'vertical',
+                      fontFamily: 'inherit'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#667eea'}
+                    onBlur={(e) => e.target.style.borderColor = '#f0f0f0'}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  style={{
+                    width: '100%',
+                    padding: '16px',
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '50px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 8px 20px rgba(102, 126, 234, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  {language === 'es' ? 'Enviar mensaje' : 'Send message'}
+                </button>
+              </form>
             </div>
-            
-            <div className="contact-item animate-on-scroll delay-100">
-              <h3>{t.contact.linkedin}</h3>
-              <a 
-                href="https://www.linkedin.com/in/miguel-angel-quiroga-55133314/"
+
+            {/* Contact Info */}
+            <div className="animate-on-scroll delay-100">
+              <div style={{ marginBottom: '48px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: '700', color: '#999', marginBottom: '16px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {t.contact.email}
+                </h3>
+                <a 
+                  href="mailto:maqdevelopment.com@gmail.com"
+                  style={{
+                    color: '#0a0a0a',
+                    textDecoration: 'none',
+                    fontSize: '18px',
+                    fontWeight: '600',
+                    display: 'inline-block',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  maqdevelopment.com@gmail.com
+                </a>
+              </div>
+
+              <div style={{ marginBottom: '48px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: '700', color: '#999', marginBottom: '16px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {t.contact.linkedin}
+                </h3>
+                <a 
+                  href="https://www.linkedin.com/in/miguel-angel-quiroga-55133314/"
             target="_blank"
             rel="noopener noreferrer"
-          >
-                Miguel Ángel Quiroga
-              </a>
-            </div>
-            
-            <div className="contact-item animate-on-scroll delay-200">
-              <h3>{t.contact.github}</h3>
-              <a 
-                href="https://github.com/kitcar63-prog"
+                  style={{
+                    color: '#0a0a0a',
+                    textDecoration: 'none',
+                    fontSize: '18px',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0077B5"/>
+                  </svg>
+                  Miguel Ángel Quiroga
+                </a>
+              </div>
+
+              <div style={{ marginBottom: '48px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: '700', color: '#999', marginBottom: '16px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {t.contact.github}
+                </h3>
+                <a 
+                  href="https://github.com/kitcar63-prog"
             target="_blank"
             rel="noopener noreferrer"
-          >
-                kitcar63-prog
-              </a>
-            </div>
-            
-            <div className="contact-item animate-on-scroll delay-300">
-              <h3>{t.contact.location}</h3>
-              <p>Cartagena, España</p>
+                  style={{
+                    color: '#0a0a0a',
+                    textDecoration: 'none',
+                    fontSize: '18px',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" fill="#181717"/>
+                  </svg>
+                  kitcar63-prog
+                </a>
+              </div>
+
+              <div>
+                <h3 style={{ fontSize: '14px', fontWeight: '700', color: '#999', marginBottom: '16px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {t.contact.location}
+                </h3>
+                <p style={{ color: '#0a0a0a', fontSize: '18px', fontWeight: '600' }}>
+                  Cartagena, España
+                </p>
+              </div>
             </div>
           </div>
         </div>
