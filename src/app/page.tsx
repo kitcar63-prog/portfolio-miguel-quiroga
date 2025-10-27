@@ -457,8 +457,9 @@ export default function Home() {
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
                 }}
               >
-                <input type="hidden" name="_subject" value="Nuevo mensaje desde Portfolio" />
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde Portfolio - maqdevelopment.netlify.app" />
                 <input type="hidden" name="_next" value="https://maqdevelopment.netlify.app/success" />
+                <input type="hidden" name="_captcha" value="false" />
                 
                 <div style={{ marginBottom: '24px' }}>
                   <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
