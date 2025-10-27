@@ -81,19 +81,19 @@ const projects = [
     id: 1,
     number: '01',
     title: {
-      es: 'Intranet El Corte Inglés',
-      en: 'El Corte Inglés Intranet'
+      es: 'Nexo - Intranet El Corte Inglés',
+      en: 'Nexo - El Corte Inglés Intranet'
     },
     description: {
-      es: 'Sistema interno de gestión empresarial para una de las mayores corporaciones de España',
-      en: 'Internal business management system for one of Spain\'s largest corporations'
+      es: 'Plataforma interna corporativa con noticias, eventos, promociones y gestión de contenidos',
+      en: 'Corporate internal platform with news, events, promotions and content management'
     },
     tags: ['SharePoint', '.NET', 'JavaScript', 'Enterprise'],
     links: [{
       url: 'https://login.microsoftonline.com/login.srf?wa=wsignin1.0&whr=elcorteingles.es&wreply=https://elcorteingles.sharepoint.com/sites/NEXO/',
       text: { es: 'Ver proyecto →', en: 'View project →' }
     }],
-    image: null // Aquí puedes poner la URL de la imagen
+    image: '/projects/nexo-elcorteingles.png'
   },
   {
     id: 2,
@@ -103,10 +103,10 @@ const projects = [
       en: 'VetoClock Iberia'
     },
     description: {
-      es: 'Plataforma integral de gestión veterinaria con telemedicina y gestión de citas',
-      en: 'Comprehensive veterinary management platform with telemedicine'
+      es: 'Sistema de gestión de casos veterinarios con alertas en tiempo real y análisis de tiempos',
+      en: 'Veterinary case management system with real-time alerts and time analysis'
     },
-    tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Telemedicina'],
+    tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Real-time'],
     links: [
       {
         url: 'https://vetoclock-formacion.com/',
@@ -117,7 +117,7 @@ const projects = [
         text: { es: 'Dashboard →', en: 'Dashboard →' }
       }
     ],
-    image: null
+    image: '/projects/vetoclock-avisos.png'
   },
   {
     id: 3,
@@ -127,60 +127,60 @@ const projects = [
       en: 'Crown Sport Nutrition'
     },
     description: {
-      es: 'E-commerce especializado en nutrición deportiva con miles de usuarios activos',
-      en: 'E-commerce specialized in sports nutrition with thousands of active users'
+      es: 'E-commerce de nutrición deportiva con programa de fidelización y gestión de productos',
+      en: 'Sports nutrition e-commerce with loyalty program and product management'
     },
     tags: ['PHP', 'JavaScript', 'MySQL', 'E-commerce'],
     links: [{
       url: 'https://crownsportnutrition.com/',
       text: { es: 'Ver proyecto →', en: 'View project →' }
     }],
-    image: null
+    image: '/projects/crown-homepage.png'
   },
   {
     id: 4,
     number: '04',
     title: {
-      es: 'Seur Logistics',
-      en: 'Seur Logistics'
+      es: 'Financial Dashboard',
+      en: 'Financial Dashboard'
     },
     description: {
-      es: 'Sistema de gestión logística y tracking de envíos para Seur',
-      en: 'Logistics management and shipment tracking system for Seur'
+      es: 'Dashboard de análisis financiero con filtros avanzados y visualización de datos',
+      en: 'Financial analysis dashboard with advanced filters and data visualization'
     },
-    tags: ['.NET', 'SQL Server', 'API REST', 'Logistics'],
+    tags: ['React', 'TypeScript', 'Charts.js', 'Analytics'],
     links: [],
-    image: null
+    image: '/projects/financial-dashboard.png'
   },
   {
     id: 5,
     number: '05',
     title: {
-      es: 'Prosegur Security',
-      en: 'Prosegur Security'
+      es: 'Juego Móvil 3D',
+      en: 'Mobile 3D Game'
     },
     description: {
-      es: 'Plataforma de gestión de seguridad y monitoreo para Prosegur',
-      en: 'Security management and monitoring platform for Prosegur'
+      es: 'Juego móvil con gráficos low-poly 3D, drones y personajes en entorno urbano',
+      en: 'Mobile game with low-poly 3D graphics, drones and characters in urban environment'
     },
-    tags: ['Python', 'Django', 'PostgreSQL', 'Security'],
+    tags: ['Unity', 'C#', '3D', 'Mobile Gaming'],
     links: [],
-    image: null
+    image: '/projects/juego-movil.png'
   },
   {
     id: 6,
     number: '06',
     title: {
-      es: 'Metrovacesa Portal',
-      en: 'Metrovacesa Portal'
+      es: 'Software Presentaciones Kinect',
+      en: 'Kinect Presentation Software'
     },
     description: {
-      es: 'Portal inmobiliario con gestión de propiedades y clientes para Metrovacesa',
-      en: 'Real estate portal with property and client management for Metrovacesa'
+      es: 'Sistema interactivo con Kinect para presentaciones corporativas de Jones Lang LaSalle',
+      en: 'Interactive Kinect system for corporate presentations at Jones Lang LaSalle'
     },
-    tags: ['PHP', 'Laravel', 'Vue.js', 'Real Estate'],
+    tags: ['Kinect', 'C#', '.NET', 'Interactive UI'],
     links: [],
-    image: null
+    image: '/projects/kinect-presentation.png'
   },
   {
     id: 7,
