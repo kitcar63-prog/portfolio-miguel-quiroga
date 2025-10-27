@@ -450,8 +450,9 @@ export default function Home() {
               <form 
                 name="contact"
                 method="POST"
+                action="/success"
+                netlify-honeypot="bot-field"
                 data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 style={{ 
                   background: 'white',
                   padding: '48px',
@@ -460,7 +461,11 @@ export default function Home() {
                 }}
               >
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="bot-field" />
+                <p hidden>
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 
                 <div style={{ marginBottom: '24px' }}>
                   <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
