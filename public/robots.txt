@@ -1,0 +1,32 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Sitemap: https://maqdevelopment.netlify.app/sitemap.xml
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+
+# ChatGPT bot
+User-agent: ChatGPT-User
+Allow: /
+
+# Claude bot
+User-agent: Claude-Web
+Allow: /
+
+# All AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
