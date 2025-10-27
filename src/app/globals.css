@@ -594,6 +594,24 @@ body {
   font-weight: 600;
 }
 
+/* Tech Badges & Client Items */
+.tech-badge:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  cursor: default;
+}
+
+.client-item:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateX(5px);
+  cursor: default;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid #f0f0f0;

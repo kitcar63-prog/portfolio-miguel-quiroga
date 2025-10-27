@@ -303,7 +303,9 @@ export default function Home() {
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
-            <div className="logo">MAQ</div>
+            <div className="logo">
+              <img src="/logo-maq.png" alt="MAQ Logo" style={{ height: '40px', width: 'auto' }} />
+            </div>
             <nav className="nav">
               <a href="#about">{t.nav.about}</a>
               <a href="#projects">{t.nav.projects}</a>
@@ -341,38 +343,44 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="stats">
-            <div className="stat animate-on-scroll">
-              <div className="stat-number counter" data-target="20" data-suffix="+">20+</div>
-              <div className="stat-label">{t.about.experience}</div>
-            </div>
-            <div className="stat animate-on-scroll delay-100">
-              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
-              <div className="stat-label">{t.about.clients}</div>
-            </div>
-            <div className="stat animate-on-scroll delay-200">
-              <div className="stat-number counter" data-target="15" data-suffix="+">15+</div>
-              <div className="stat-label">{t.about.technologies}</div>
-            </div>
-          </div>
-
-          <div className="grid-2">
+          <div className="grid-2" style={{ marginTop: '80px' }}>
             <div className="grid-item animate-on-scroll">
-              <h3>Stack Tecnológico</h3>
-              <p><strong>Backend:</strong> Python, PHP, .NET</p>
-              <p><strong>Frontend:</strong> JavaScript, React, Swift</p>
-              <p><strong>Frameworks:</strong> Laravel, Next.js</p>
-              <p><strong>Databases:</strong> MySQL, MongoDB, Pinecone</p>
-              <p><strong>Cloud & DevOps:</strong> AWS (EC2, S3, Glacier), Docker</p>
+              <h3 style={{ fontSize: '32px', marginBottom: '40px' }}>Stack Tecnológico</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '16px' }}>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">PHP</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">.NET</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Java</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">C</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Python</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">JavaScript</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">React</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Node.js</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Laravel</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">MySQL</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">MongoDB</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">AWS</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Docker</div>
+                <div style={{ padding: '16px', background: '#f5f5f5', borderRadius: '12px', textAlign: 'center', fontWeight: '600', transition: 'all 0.3s ease' }} className="tech-badge">Blockchain</div>
+              </div>
             </div>
             <div className="grid-item animate-on-scroll delay-100">
-              <h3>Clientes</h3>
-              <p>Accenture · Repsol · Galp</p>
-              <p>Red Eléctrica · Iberdrola</p>
-              <p>El Corte Inglés · Seur · Prosegur</p>
-              <p>Metrovacesa · Jones Lang LaSalle</p>
-              <p>Crown Sport Nutrition · VetoClock</p>
-              <p>Gomel · Bunji Restaurant</p>
+              <h3 style={{ fontSize: '32px', marginBottom: '40px' }}>Clientes</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Accenture</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Repsol</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Galp</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Red Eléctrica</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Iberdrola</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">El Corte Inglés</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Seur</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Prosegur</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Metrovacesa</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Jones Lang LaSalle</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Crown Sport Nutrition</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">VetoClock</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Gomel</div>
+                <div style={{ fontSize: '17px', color: '#0a0a0a', fontWeight: '600', transition: 'all 0.3s ease' }} className="client-item">Bunji Restaurant</div>
+              </div>
             </div>
           </div>
         </div>
