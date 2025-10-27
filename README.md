@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Minimalista Nórdico - Miguel Ángel Quiroga
 
-## Getting Started
+Portfolio personal de estilo nórdico minimalista con Next.js y TailwindCSS.
 
-First, run the development server:
+## 🚀 Deploy en Netlify
 
+### Opción 1: Deploy Manual
+
+1. Inicializa el repositorio Git (si no lo has hecho):
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd /Users/miguelangelquirogafolguers/portfolio-minimal
+git init
+git add .
+git commit -m "Initial commit"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Sube el código a GitHub:
+```bash
+# Crea un repositorio en GitHub primero
+git remote add origin https://github.com/kitcar63-prog/portfolio.git
+git push -u origin main
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Ve a [Netlify](https://app.netlify.com/) y:
+   - Click en "Add new site" > "Import an existing project"
+   - Conecta tu cuenta de GitHub
+   - Selecciona el repositorio
+   - Build settings:
+     - Build command: `npm run build`
+     - Publish directory: `.next`
+   - Click en "Deploy"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Opción 2: Deploy con Netlify CLI
 
-## Learn More
+```bash
+# Instala Netlify CLI
+npm install -g netlify-cli
 
-To learn more about Next.js, take a look at the following resources:
+# Login en Netlify
+netlify login
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Deploy
+cd /Users/miguelangelquirogafolguers/portfolio-minimal
+netlify deploy --prod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Características
 
-## Deploy on Vercel
+- ✅ Diseño minimalista nórdico (blanco, negro, gris)
+- ✅ Soporte bilingüe (Español/Inglés)
+- ✅ Responsive design
+- ✅ Next.js 16 con TypeScript
+- ✅ TailwindCSS
+- ✅ Información real de proyectos
+- ✅ Enlaces a proyectos reales
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Personalización
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para modificar el contenido, edita: `src/app/page.tsx`
+
+## 🛠 Desarrollo local
+
+```bash
+npm install
+npm run dev
+```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## 📧 Contacto
+
+- Email: maqdevelopment.com@gmail.com
+- LinkedIn: [miguel-angel-quiroga-55133314](https://www.linkedin.com/in/miguel-angel-quiroga-55133314/)
+- GitHub: [kitcar63-prog](https://github.com/kitcar63-prog)
