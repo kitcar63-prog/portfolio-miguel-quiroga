@@ -1,74 +1,137 @@
-# Portfolio Minimalista Nórdico - Miguel Ángel Quiroga
+# Portfolio Premium - Miguel Ángel Quiroga
 
-Portfolio personal de estilo nórdico minimalista con Next.js y TailwindCSS.
+Portfolio personal con diseño moderno inspirado en Kitpro-Fluke, con animaciones avanzadas y efectos profesionales.
 
-## 🚀 Deploy en Netlify
+## 🎨 Características Premium
 
-### Opción 1: Deploy Manual
+### Animaciones Avanzadas
+- ✅ **Scroll Animations**: Elementos que aparecen al hacer scroll
+- ✅ **Counter Animation**: Números que cuentan progresivamente
+- ✅ **Hover Effects**: Transiciones suaves en todos los elementos
+- ✅ **Smooth Scroll**: Navegación fluida entre secciones
+- ✅ **Header Dinámico**: Se comprime al hacer scroll
+- ✅ **Parallax Effects**: Fondo con movimiento sutil
 
-1. Inicializa el repositorio Git (si no lo has hecho):
+### Diseño
+- ✅ Tipografía grande y bold
+- ✅ Espacios amplios (whitespace generoso)
+- ✅ Grid moderno y responsive
+- ✅ Gradientes en hover
+- ✅ Sombras y elevaciones
+- ✅ Transiciones CSS avanzadas
+
+## 📸 Cómo Agregar Imágenes de tus Proyectos
+
+### Opción 1: Imágenes Locales
+
+1. **Crea la carpeta de imágenes:**
 ```bash
-cd /Users/miguelangelquirogafolguers/portfolio-minimal
-git init
-git add .
-git commit -m "Initial commit"
+mkdir -p public/projects
 ```
 
-2. Sube el código a GitHub:
-```bash
-# Crea un repositorio en GitHub primero
-git remote add origin https://github.com/kitcar63-prog/portfolio.git
-git push -u origin main
+2. **Agrega tus screenshots:**
+```
+public/
+  projects/
+    elcorteingles.jpg
+    vetoclock.jpg
+    crown.jpg
 ```
 
-3. Ve a [Netlify](https://app.netlify.com/) y:
-   - Click en "Add new site" > "Import an existing project"
-   - Conecta tu cuenta de GitHub
-   - Selecciona el repositorio
-   - Build settings:
-     - Build command: `npm run build`
-     - Publish directory: `.next`
-   - Click en "Deploy"
-
-### Opción 2: Deploy con Netlify CLI
-
-```bash
-# Instala Netlify CLI
-npm install -g netlify-cli
-
-# Login en Netlify
-netlify login
-
-# Deploy
-cd /Users/miguelangelquirogafolguers/portfolio-minimal
-netlify deploy --prod
+3. **Actualiza el código** en `src/app/page.tsx`:
+```tsx
+<div className="project-image">
+  <img src="/projects/elcorteingles.jpg" alt="El Corte Inglés Intranet" />
+</div>
 ```
 
-## 🌐 Características
+### Opción 2: Usar URLs Externas
 
-- ✅ Diseño minimalista nórdico (blanco, negro, gris)
-- ✅ Soporte bilingüe (Español/Inglés)
-- ✅ Responsive design
-- ✅ Next.js 16 con TypeScript
-- ✅ TailwindCSS
-- ✅ Información real de proyectos
-- ✅ Enlaces a proyectos reales
+Si tienes las imágenes en otro lugar (Imgur, CloudFlare, etc.):
 
-## 📝 Personalización
+```tsx
+<div className="project-image">
+  <img src="https://tu-url.com/imagen.jpg" alt="Proyecto" />
+</div>
+```
 
-Para modificar el contenido, edita: `src/app/page.tsx`
+### Opción 3: Next.js Image Component (Recomendado)
 
-## 🛠 Desarrollo local
+Para mejor performance:
 
+```tsx
+import Image from 'next/image';
+
+<div className="project-image">
+  <Image 
+    src="/projects/vetoclock.jpg" 
+    alt="VetoClock"
+    fill
+    style={{ objectFit: 'cover' }}
+  />
+</div>
+```
+
+## 🚀 Comandos
+
+### Desarrollo
 ```bash
 npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+### Build
+```bash
+npm run build
+```
+
+### Deploy en Netlify
+
+El proyecto está configurado para deploy automático en Netlify desde GitHub.
+
+**Build settings:**
+- Build command: `npm run build`
+- Publish directory: `.next`
+
+## 📝 Personalización
+
+### Cambiar Colores del Gradiente
+
+En `src/app/globals.css`, busca:
+```css
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+```
+
+### Ajustar Velocidad de Animaciones
+
+En `src/app/globals.css`:
+```css
+animation: fadeInUp 0.8s ease-out forwards; /* Cambia 0.8s */
+```
+
+### Modificar Tamaños
+
+En `src/app/globals.css`:
+```css
+.hero h1 {
+  font-size: 80px; /* Ajusta aquí */
+}
+```
 
 ## 📧 Contacto
 
 - Email: maqdevelopment.com@gmail.com
 - LinkedIn: [miguel-angel-quiroga-55133314](https://www.linkedin.com/in/miguel-angel-quiroga-55133314/)
 - GitHub: [kitcar63-prog](https://github.com/kitcar63-prog)
+
+## 🛠 Tech Stack
+
+- Next.js 16
+- TypeScript
+- CSS3 (Animaciones avanzadas)
+- Intersection Observer API
+- Responsive Design
+
+---
+
+**Hecho con ❤️ por Miguel Ángel Quiroga**

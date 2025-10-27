@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const translations = {
   es: {
@@ -101,12 +101,74 @@ const translations = {
 
 export default function Home() {
   const [language, setLanguage] = useState<'es' | 'en'>('es');
+  const [scrolled, setScrolled] = useState(false);
   const t = translations[language];
+
+  // Scroll animations
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Animate elements on scroll
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+        
+        if (isVisible) {
+          element.classList.add('fade-in-up');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Counter animation
+  const animateCounter = (element: HTMLElement, target: number, suffix: string = '') => {
+    let current = 0;
+    const increment = target / 50;
+    const duration = 2000;
+    const stepTime = duration / 50;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current) + suffix;
+      }
+    }, stepTime);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target as HTMLElement;
+          const target = parseInt(element.dataset.target || '0');
+          const suffix = element.dataset.suffix || '';
+          animateCounter(element, target, suffix);
+          observer.unobserve(element);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.counter').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div>
       {/* Header */}
-      <header className="header">
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
             <div className="logo">
@@ -131,10 +193,10 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>{t.hero.title}</h1>
-            <h2>{t.hero.subtitle}</h2>
-            <p className="hero-description">{t.hero.description}</p>
-            <p className="hero-location">{t.hero.location}</p>
+            <h1 className="fade-in-up">{t.hero.title}</h1>
+            <h2 className="fade-in-up delay-100">{t.hero.subtitle}</h2>
+            <p className="hero-description fade-in-up delay-200">{t.hero.description}</p>
+            <p className="hero-location fade-in-up delay-300">{t.hero.location}</p>
           </div>
         </div>
       </section>
@@ -142,26 +204,26 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="section section-gray">
         <div className="container">
-          <h2 className="section-title">{t.about.title}</h2>
-          <p className="section-subtitle">{t.about.description}</p>
+          <h2 className="section-title animate-on-scroll">{t.about.title}</h2>
+          <p className="section-subtitle animate-on-scroll">{t.about.description}</p>
           
           <div className="stats">
-            <div className="stat">
-              <div className="stat-number">10+</div>
+            <div className="stat animate-on-scroll">
+              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
               <div className="stat-label">{t.about.experience}</div>
             </div>
-            <div className="stat">
-              <div className="stat-number">7</div>
+            <div className="stat animate-on-scroll delay-100">
+              <div className="stat-number counter" data-target="7">7</div>
               <div className="stat-label">{t.about.clients}</div>
             </div>
-            <div className="stat">
-              <div className="stat-number">10+</div>
+            <div className="stat animate-on-scroll delay-200">
+              <div className="stat-number counter" data-target="10" data-suffix="+">10+</div>
               <div className="stat-label">{t.about.technologies}</div>
             </div>
           </div>
 
           <div className="grid-2">
-            <div className="grid-item">
+            <div className="grid-item animate-on-scroll">
               <h3>Stack Tecnológico</h3>
               <p><strong>Backend:</strong> Python, PHP, .NET</p>
               <p><strong>Frontend:</strong> JavaScript, React, Swift</p>
@@ -169,7 +231,7 @@ export default function Home() {
               <p><strong>Databases:</strong> MySQL, MongoDB, Pinecone</p>
               <p><strong>Cloud & DevOps:</strong> AWS (EC2, S3, Glacier), Docker</p>
             </div>
-            <div className="grid-item">
+            <div className="grid-item animate-on-scroll delay-100">
               <h3>Clientes</h3>
               <p>El Corte Inglés</p>
               <p>Seur</p>
@@ -186,14 +248,21 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="section">
         <div className="container">
-          <h2 className="section-title">{t.projects.title}</h2>
-          <p className="section-subtitle">{t.projects.subtitle}</p>
+          <h2 className="section-title animate-on-scroll">{t.projects.title}</h2>
+          <p className="section-subtitle animate-on-scroll">{t.projects.subtitle}</p>
           
           <div className="projects-grid">
             {/* El Corte Inglés */}
-            <div className="project">
+            <div className="project animate-on-scroll">
               <div className="project-number">01</div>
               <h3>{t.projects.intranet.title}</h3>
+              
+              <div className="project-image">
+                <div className="project-image-placeholder">
+                  El Corte Inglés Intranet
+                </div>
+              </div>
+              
               <p className="project-description">{t.projects.intranet.description}</p>
               <div className="tech-tags">
                 <span className="tech-tag">SharePoint</span>
@@ -214,9 +283,16 @@ export default function Home() {
             </div>
 
             {/* VetoClock */}
-            <div className="project">
+            <div className="project animate-on-scroll">
               <div className="project-number">02</div>
               <h3>{t.projects.vetoclock.title}</h3>
+              
+              <div className="project-image">
+                <div className="project-image-placeholder">
+                  VetoClock Platform
+                </div>
+              </div>
+              
               <p className="project-description">{t.projects.vetoclock.description}</p>
               <div className="tech-tags">
                 <span className="tech-tag">PHP</span>
@@ -246,9 +322,16 @@ export default function Home() {
             </div>
 
             {/* Crown Sport Nutrition */}
-            <div className="project">
+            <div className="project animate-on-scroll">
               <div className="project-number">03</div>
               <h3>{t.projects.crown.title}</h3>
+              
+              <div className="project-image">
+                <div className="project-image-placeholder">
+                  Crown Sport Nutrition
+                </div>
+              </div>
+              
               <p className="project-description">{t.projects.crown.description}</p>
               <div className="tech-tags">
                 <span className="tech-tag">PHP</span>
@@ -274,18 +357,18 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="section section-gray">
         <div className="container">
-          <h2 className="section-title">{t.contact.title}</h2>
-          <p className="section-subtitle">{t.contact.subtitle}</p>
+          <h2 className="section-title animate-on-scroll">{t.contact.title}</h2>
+          <p className="section-subtitle animate-on-scroll">{t.contact.subtitle}</p>
           
           <div className="contact-grid">
-            <div className="contact-item">
+            <div className="contact-item animate-on-scroll">
               <h3>{t.contact.email}</h3>
               <a href="mailto:maqdevelopment.com@gmail.com">
                 maqdevelopment.com@gmail.com
               </a>
             </div>
             
-            <div className="contact-item">
+            <div className="contact-item animate-on-scroll delay-100">
               <h3>{t.contact.linkedin}</h3>
               <a 
                 href="https://www.linkedin.com/in/miguel-angel-quiroga-55133314/"
@@ -296,7 +379,7 @@ export default function Home() {
               </a>
             </div>
             
-            <div className="contact-item">
+            <div className="contact-item animate-on-scroll delay-200">
               <h3>{t.contact.github}</h3>
               <a 
                 href="https://github.com/kitcar63-prog"
@@ -307,7 +390,7 @@ export default function Home() {
               </a>
             </div>
             
-            <div className="contact-item">
+            <div className="contact-item animate-on-scroll delay-300">
               <h3>{t.contact.location}</h3>
               <p>Cartagena, España</p>
             </div>
