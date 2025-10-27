@@ -448,7 +448,7 @@ export default function Home() {
             {/* Contact Form */}
             <div className="animate-on-scroll">
               <form 
-                action="https://formspree.io/f/xdkobkwg"
+                action="https://formspree.io/f/xpwoqlqb"
                 method="POST"
                 style={{ 
                   background: 'white',
