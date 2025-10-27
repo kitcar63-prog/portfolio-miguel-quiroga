@@ -450,14 +450,24 @@ export default function Home() {
               <form 
                 name="contact"
                 method="POST"
-                action="/success"
-                netlify-honeypot="bot-field"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 style={{ 
                   background: 'white',
                   padding: '48px',
                   borderRadius: '20px',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form) as any).toString()
+                  })
+                    .then(() => window.location.href = '/success')
+                    .catch((error) => alert(error));
                 }}
               >
                 <input type="hidden" name="form-name" value="contact" />
