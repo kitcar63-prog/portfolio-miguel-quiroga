@@ -448,11 +448,8 @@ export default function Home() {
             {/* Contact Form */}
             <div className="animate-on-scroll">
               <form 
-                name="contact"
+                action="https://formspree.io/f/xdkobkwg"
                 method="POST"
-                action="/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 style={{ 
                   background: 'white',
                   padding: '48px',
@@ -460,12 +457,8 @@ export default function Home() {
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
                 }}
               >
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
-                  <label>
-                    Don't fill this out: <input name="bot-field" />
-                  </label>
-                </p>
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde Portfolio" />
+                <input type="hidden" name="_next" value="https://maqdevelopment.netlify.app/success" />
                 
                 <div style={{ marginBottom: '24px' }}>
                   <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', fontWeight: '600', fontSize: '14px', color: '#666' }}>
