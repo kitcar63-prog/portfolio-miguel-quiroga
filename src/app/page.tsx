@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const translations = {
   es: {
@@ -24,19 +24,7 @@ const translations = {
     },
     projects: {
       title: 'Proyectos destacados',
-      subtitle: 'Soluciones tecnológicas para empresas líderes del mercado',
-      intranet: {
-        title: 'Intranet El Corte Inglés',
-        description: 'Sistema interno de gestión empresarial para una de las mayores corporaciones de España'
-      },
-      vetoclock: {
-        title: 'VetoClock Iberia',
-        description: 'Plataforma integral de gestión veterinaria con telemedicina, gestión de citas y historiales clínicos'
-      },
-      crown: {
-        title: 'Crown Sport Nutrition',
-        description: 'E-commerce especializado en nutrición deportiva con miles de usuarios activos'
-      }
+      subtitle: 'Portfolio de proyectos desarrollados para empresas líderes'
     },
     contact: {
       title: 'Hablemos',
@@ -71,19 +59,7 @@ const translations = {
     },
     projects: {
       title: 'Featured projects',
-      subtitle: 'Technological solutions for market-leading companies',
-      intranet: {
-        title: 'El Corte Inglés Intranet',
-        description: 'Internal business management system for one of Spain\'s largest corporations'
-      },
-      vetoclock: {
-        title: 'VetoClock Iberia',
-        description: 'Comprehensive veterinary management platform with telemedicine, appointment scheduling and medical records'
-      },
-      crown: {
-        title: 'Crown Sport Nutrition',
-        description: 'E-commerce specialized in sports nutrition with thousands of active users'
-      }
+      subtitle: 'Portfolio of projects developed for leading companies'
     },
     contact: {
       title: 'Let\'s talk',
@@ -99,6 +75,175 @@ const translations = {
   }
 };
 
+// Array de proyectos - Aquí puedes agregar más proyectos fácilmente
+const projects = [
+  {
+    id: 1,
+    number: '01',
+    title: {
+      es: 'Intranet El Corte Inglés',
+      en: 'El Corte Inglés Intranet'
+    },
+    description: {
+      es: 'Sistema interno de gestión empresarial para una de las mayores corporaciones de España',
+      en: 'Internal business management system for one of Spain\'s largest corporations'
+    },
+    tags: ['SharePoint', '.NET', 'JavaScript', 'Enterprise'],
+    links: [{
+      url: 'https://login.microsoftonline.com/login.srf?wa=wsignin1.0&whr=elcorteingles.es&wreply=https://elcorteingles.sharepoint.com/sites/NEXO/',
+      text: { es: 'Ver proyecto →', en: 'View project →' }
+    }],
+    image: null // Aquí puedes poner la URL de la imagen
+  },
+  {
+    id: 2,
+    number: '02',
+    title: {
+      es: 'VetoClock Iberia',
+      en: 'VetoClock Iberia'
+    },
+    description: {
+      es: 'Plataforma integral de gestión veterinaria con telemedicina y gestión de citas',
+      en: 'Comprehensive veterinary management platform with telemedicine'
+    },
+    tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Telemedicina'],
+    links: [
+      {
+        url: 'https://vetoclock-formacion.com/',
+        text: { es: 'Formación →', en: 'Training →' }
+      },
+      {
+        url: 'https://vetoclock-dashboard.netlify.app/sign-in',
+        text: { es: 'Dashboard →', en: 'Dashboard →' }
+      }
+    ],
+    image: null
+  },
+  {
+    id: 3,
+    number: '03',
+    title: {
+      es: 'Crown Sport Nutrition',
+      en: 'Crown Sport Nutrition'
+    },
+    description: {
+      es: 'E-commerce especializado en nutrición deportiva con miles de usuarios activos',
+      en: 'E-commerce specialized in sports nutrition with thousands of active users'
+    },
+    tags: ['PHP', 'JavaScript', 'MySQL', 'E-commerce'],
+    links: [{
+      url: 'https://crownsportnutrition.com/',
+      text: { es: 'Ver proyecto →', en: 'View project →' }
+    }],
+    image: null
+  },
+  {
+    id: 4,
+    number: '04',
+    title: {
+      es: 'Seur Logistics',
+      en: 'Seur Logistics'
+    },
+    description: {
+      es: 'Sistema de gestión logística y tracking de envíos para Seur',
+      en: 'Logistics management and shipment tracking system for Seur'
+    },
+    tags: ['.NET', 'SQL Server', 'API REST', 'Logistics'],
+    links: [],
+    image: null
+  },
+  {
+    id: 5,
+    number: '05',
+    title: {
+      es: 'Prosegur Security',
+      en: 'Prosegur Security'
+    },
+    description: {
+      es: 'Plataforma de gestión de seguridad y monitoreo para Prosegur',
+      en: 'Security management and monitoring platform for Prosegur'
+    },
+    tags: ['Python', 'Django', 'PostgreSQL', 'Security'],
+    links: [],
+    image: null
+  },
+  {
+    id: 6,
+    number: '06',
+    title: {
+      es: 'Metrovacesa Portal',
+      en: 'Metrovacesa Portal'
+    },
+    description: {
+      es: 'Portal inmobiliario con gestión de propiedades y clientes para Metrovacesa',
+      en: 'Real estate portal with property and client management for Metrovacesa'
+    },
+    tags: ['PHP', 'Laravel', 'Vue.js', 'Real Estate'],
+    links: [],
+    image: null
+  },
+  {
+    id: 7,
+    number: '07',
+    title: {
+      es: 'Gomel Gaming Platform',
+      en: 'Gomel Gaming Platform'
+    },
+    description: {
+      es: 'Plataforma de gaming con sistema de matchmaking y torneos',
+      en: 'Gaming platform with matchmaking system and tournaments'
+    },
+    tags: ['Python', 'FastAPI', 'PostgreSQL', 'WebSocket'],
+    links: [],
+    image: null
+  },
+  {
+    id: 8,
+    number: '08',
+    title: {
+      es: 'Financial Dashboard',
+      en: 'Financial Dashboard'
+    },
+    description: {
+      es: 'Dashboard de análisis financiero con visualización de datos en tiempo real',
+      en: 'Financial analysis dashboard with real-time data visualization'
+    },
+    tags: ['React', 'TypeScript', 'D3.js', 'Finance'],
+    links: [],
+    image: null
+  },
+  {
+    id: 9,
+    number: '09',
+    title: {
+      es: 'Health Management System',
+      en: 'Health Management System'
+    },
+    description: {
+      es: 'Sistema de gestión de salud con historiales médicos y citas',
+      en: 'Health management system with medical records and appointments'
+    },
+    tags: ['Swift', 'iOS', 'Firebase', 'Healthcare'],
+    links: [],
+    image: null
+  },
+  {
+    id: 10,
+    number: '10',
+    title: {
+      es: 'AI Content Generator',
+      en: 'AI Content Generator'
+    },
+    description: {
+      es: 'Generador de contenido con IA y procesamiento de lenguaje natural',
+      en: 'AI-powered content generator with natural language processing'
+    },
+    tags: ['Python', 'OpenAI', 'Pinecone', 'AI/ML'],
+    links: [],
+    image: null
+  }
+];
+
 export default function Home() {
   const [language, setLanguage] = useState<'es' | 'en'>('es');
   const [scrolled, setScrolled] = useState(false);
@@ -109,20 +254,19 @@ export default function Home() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Animate elements on scroll
       const elements = document.querySelectorAll('.animate-on-scroll');
       elements.forEach((element) => {
         const rect = element.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight - 100;
         
-        if (isVisible) {
+        if (isVisible && !element.classList.contains('fade-in-up')) {
           element.classList.add('fade-in-up');
         }
       });
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -171,9 +315,7 @@ export default function Home() {
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
-            <div className="logo">
-              MAQ
-            </div>
+            <div className="logo">MAQ</div>
             <nav className="nav">
               <a href="#about">{t.nav.about}</a>
               <a href="#projects">{t.nav.projects}</a>
@@ -245,111 +387,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - Nuevo Grid Compacto */}
       <section id="projects" className="section">
         <div className="container">
           <h2 className="section-title animate-on-scroll">{t.projects.title}</h2>
           <p className="section-subtitle animate-on-scroll">{t.projects.subtitle}</p>
           
           <div className="projects-grid">
-            {/* El Corte Inglés */}
-            <div className="project animate-on-scroll">
-              <div className="project-number">01</div>
-              <h3>{t.projects.intranet.title}</h3>
-              
-              <div className="project-image">
-                <div className="project-image-placeholder">
-                  El Corte Inglés Intranet
+            {projects.map((project, index) => (
+              <div key={project.id} className={`project-card animate-on-scroll delay-${Math.min(index, 6)}00`}>
+                <div className="project-image-container">
+                  {project.image ? (
+                    <img src={project.image} alt={project.title[language]} />
+                  ) : (
+                    <div className="project-image-placeholder">
+                      {project.title[language]}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="project-content">
+                  <div className="project-number">{project.number}</div>
+                  <h3 className="project-title">{project.title[language]}</h3>
+                  <p className="project-description">{project.description[language]}</p>
+                  
+                  <div className="tech-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tech-tag">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  {project.links.length > 0 && (
+                    <div className="project-links">
+                      {project.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          {link.text[language]}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
-              
-              <p className="project-description">{t.projects.intranet.description}</p>
-              <div className="tech-tags">
-                <span className="tech-tag">SharePoint</span>
-                <span className="tech-tag">.NET</span>
-                <span className="tech-tag">JavaScript</span>
-                <span className="tech-tag">Enterprise</span>
-              </div>
-              <div className="project-links">
-                <a 
-                  href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&whr=elcorteingles.es&wreply=https://elcorteingles.sharepoint.com/sites/NEXO/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  Ver proyecto →
-                </a>
-              </div>
-            </div>
-
-            {/* VetoClock */}
-            <div className="project animate-on-scroll">
-              <div className="project-number">02</div>
-              <h3>{t.projects.vetoclock.title}</h3>
-              
-              <div className="project-image">
-                <div className="project-image-placeholder">
-                  VetoClock Platform
-                </div>
-              </div>
-              
-              <p className="project-description">{t.projects.vetoclock.description}</p>
-              <div className="tech-tags">
-                <span className="tech-tag">PHP</span>
-                <span className="tech-tag">Laravel</span>
-                <span className="tech-tag">React</span>
-                <span className="tech-tag">MySQL</span>
-                <span className="tech-tag">Telemedicina</span>
-              </div>
-              <div className="project-links">
-                <a 
-                  href="https://vetoclock-formacion.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  Formación →
-                </a>
-                <a 
-                  href="https://vetoclock-dashboard.netlify.app/sign-in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  Dashboard →
-                </a>
-              </div>
-            </div>
-
-            {/* Crown Sport Nutrition */}
-            <div className="project animate-on-scroll">
-              <div className="project-number">03</div>
-              <h3>{t.projects.crown.title}</h3>
-              
-              <div className="project-image">
-                <div className="project-image-placeholder">
-                  Crown Sport Nutrition
-                </div>
-              </div>
-              
-              <p className="project-description">{t.projects.crown.description}</p>
-              <div className="tech-tags">
-                <span className="tech-tag">PHP</span>
-                <span className="tech-tag">JavaScript</span>
-                <span className="tech-tag">MySQL</span>
-                <span className="tech-tag">E-commerce</span>
-              </div>
-              <div className="project-links">
-                <a 
-                  href="https://crownsportnutrition.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  Ver proyecto →
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
