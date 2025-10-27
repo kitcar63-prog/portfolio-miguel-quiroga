@@ -456,6 +456,24 @@ export default function Home() {
                   borderRadius: '20px',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
                 }}
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  
+                  try {
+                    await fetch('https://formspree.io/f/xpwoqlqb', {
+                      method: 'POST',
+                      body: data,
+                      headers: {
+                        'Accept': 'application/json'
+                      }
+                    });
+                    window.location.href = '/success';
+                  } catch (error) {
+                    alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
+                  }
+                }}
               >
                 <input type="hidden" name="_subject" value="Nuevo mensaje desde Portfolio - maqdevelopment.netlify.app" />
                 <input type="hidden" name="_next" value="https://maqdevelopment.netlify.app/success" />
