@@ -336,11 +336,28 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="section section-gray">
         <div className="container">
-          <h2 className="section-title animate-on-scroll">{t.about.title}</h2>
-          <div className="section-subtitle animate-on-scroll">
-            {t.about.description.split('\n\n').map((paragraph, index) => (
-              <p key={index} style={{ marginBottom: '1.5rem' }}>{paragraph}</p>
-            ))}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '60px', marginBottom: '80px', flexWrap: 'wrap' }}>
+            <img 
+              src="/miguel-quiroga.jpg" 
+              alt="Miguel Ángel Quiroga - Tech Lead & Full-Stack Developer"
+              style={{
+                width: '220px',
+                height: '220px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                border: '4px solid white'
+              }}
+              className="animate-on-scroll scale-in"
+            />
+            <div style={{ flex: '1', minWidth: '300px' }}>
+              <h2 className="section-title animate-on-scroll" style={{ marginBottom: '24px' }}>{t.about.title}</h2>
+              <div className="section-subtitle animate-on-scroll" style={{ marginBottom: '0' }}>
+                {t.about.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index} style={{ marginBottom: '1.5rem' }}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </div>
           
           <div className="grid-2" style={{ marginTop: '80px' }}>
