@@ -107,7 +107,10 @@ const projects = [
       en: 'Interactive Kinect system for corporate presentations at Jones Lang LaSalle'
     },
     tags: ['Kinect', 'C#', '.NET', 'Interactive UI'],
-    links: [],
+    links: [{
+      url: 'https://youtu.be/5nDOfinKAms?si=5yio__W5vztlAJ6M',
+      text: { es: 'Ver video →', en: 'Watch video →' }
+    }],
     image: '/projects/kinect-presentation.png'
   },
   {
@@ -155,7 +158,10 @@ const projects = [
       en: 'Mobile game with low-poly 3D graphics, drones and characters in urban environment'
     },
     tags: ['Unity', 'C#', '3D', 'Mobile Gaming'],
-    links: [],
+    links: [{
+      url: 'https://youtu.be/7E5HJPrcqtk?si=jupXnHkKLdE9ddGe',
+      text: { es: 'Ver video →', en: 'Watch video →' }
+    }],
     image: '/projects/juego-movil.png'
   },
   {
@@ -171,6 +177,10 @@ const projects = [
     },
     tags: ['PHP', 'Laravel', 'React', 'MySQL', 'Real-time'],
     links: [
+      {
+        url: 'https://www.vetoclock-iberia.com/',
+        text: { es: 'Ver web →', en: 'Visit website →' }
+      },
       {
         url: 'https://vetoclock-formacion.com/',
         text: { es: 'Formación →', en: 'Training →' }
@@ -209,7 +219,10 @@ const projects = [
       en: 'Tropical restaurant website with vibrant design and booking system'
     },
     tags: ['React', 'JavaScript', 'Booking System', 'Web Design'],
-    links: [],
+    links: [{
+      url: 'https://bunji.es/',
+      text: { es: 'Ver web →', en: 'Visit website →' }
+    }],
     image: '/projects/bunji-restaurant.png'
   },
   {
