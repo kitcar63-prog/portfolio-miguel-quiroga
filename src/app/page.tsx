@@ -242,6 +242,21 @@ const projects = [
       text: { es: 'Ver proyecto →', en: 'View project →' }
     }],
     image: '/projects/crown-homepage.png'
+  },
+  {
+    id: 10,
+    number: '10',
+    title: {
+      es: 'n8n + MCP: Automatización y agentes de IA inteligentes',
+      en: 'n8n + MCP: Automation and intelligent AI agents'
+    },
+    description: {
+      es: 'Soluciones de automatización avanzadas con n8n integradas con Model Context Protocol (MCP) para crear agentes de IA inteligentes y workflows automatizados',
+      en: 'Advanced automation solutions with n8n integrated with Model Context Protocol (MCP) to create intelligent AI agents and automated workflows'
+    },
+    tags: ['n8n', 'MCP', 'AI', 'Automation', 'Workflows'],
+    links: [],
+    image: '/projects/n8n.png'
   }
 ];
 
@@ -391,6 +406,7 @@ export default function Home() {
                 <div className="tech-badge">AWS</div>
                 <div className="tech-badge">Docker</div>
                 <div className="tech-badge">Blockchain</div>
+                <div className="tech-badge">n8n</div>
               </div>
             </div>
             <div className="tech-section animate-on-scroll delay-100">
